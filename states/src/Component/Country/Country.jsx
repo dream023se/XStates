@@ -93,7 +93,7 @@ function Country() {
 
       </div>
       {selectedLocation && (
-        <p>You Selected {selectedLocation}</p>
+        <p>You selected {selectedLocation}</p>
       )}
       
     </div>
