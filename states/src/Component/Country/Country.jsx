@@ -9,6 +9,7 @@ function Country() {
   const [cities, setCities] = useState([]);
   const [selectedCity, setSelectedCity] = useState('');
   const [isCountrySelected, setIsCountrySelected] = useState(false);
+  const [selectedLocation, setSelectedLocation] = useState('');
 
   useEffect(() => {
     fetchCountries();
@@ -61,6 +62,7 @@ function Country() {
   const handleCityChange = (event) => {
     const selectedCity = event.target.value;
     setSelectedCity(selectedCity);
+    setSelectedLocation(`${selectedCity}, ${selectedState}, ${selectedCountry}`);
   };
 
   return (
@@ -90,6 +92,9 @@ function Country() {
         </select>
 
       </div>
+      {selectedLocation && (
+        <p>You Selected {selectedLocation}</p>
+      )}
       
     </div>
   );
